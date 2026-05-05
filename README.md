@@ -5,36 +5,56 @@ MedAlert: Medication Reminder & Escalation System
 Overview
 This project presents a dual-unit embedded system designed to improve medication adherence in assisted-living environments. The system consists of a Patient Unit and a Caregiver Unit, both built using Arduino Uno microcontrollers.
 The Patient Unit is responsible for:
+
 •	Displaying medication reminders 
+
 •	Triggering buzzer alerts 
-•	Accepting user acknowledgment via a push button 
+
+•	Accepting user acknowledgment via a push button
+
 If the patient does not acknowledge the reminder within a defined time window, the system escalates the alert by sending a signal to the Caregiver Unit.
 The Caregiver Unit:
+
 •	Receives escalation alerts via I2C communication 
+
 •	Activates a buzzer and LED 
+
 •	Displays a warning message 
 
 How the System Works
 The system operates using a state machine and timed events:
+
 •	Idle State → Waiting for next reminder 
+
 •	Reminder State → Alerts patient via OLED + buzzer 
+
 •	Confirmed State → Patient presses button → system resets 
+
 •	Escalation State → No response → caregiver is alerted 
+
 Communication between the two units is achieved using the I2C protocol, where:
+
 •	Patient Unit = Master 
+
 •	Caregiver Unit = Slave (Address: 0x08) 
 
 Wokwi Simulation
 The system was first implemented and tested using Wokwi as a proof of concept.
 The simulation validates:
+
 •	Timing logic using millis() 
+
 •	Button interaction 
+
 •	OLED display output 
-•	Buzzer patterns 
+
+•	Buzzer patterns
+
 •	I2C communication between two Arduino units 
+
 This simulation also serves as a schematic reference for the physical implementation.
 Wokwi simulation screenshot below:
-![image alt]()
+![image alt](https://github.com/kuriajeremy/Task11-Project/blob/bd0b52e747fcbebba17ed7699de79682563abe37/wokwi_sim.png)
 The simulation code (patient.ino, caregiver.ino) is included in this repository.
 
 
@@ -58,9 +78,12 @@ Caregiver Unit:
 6.	Breadboard 
 7.	Jumper wires 
 Additional (Real Build):
+
 •	4.7kΩ resistors (I2C pull-ups) 
+
 •	RTC Module (DS1307/DS3231) 
-•	Power supply (USB or battery) 
+
+•	Power supply (USB)
 
 Pin Mapping
 Component	Patient Unit	Caregiver Unit
@@ -115,9 +138,13 @@ Fault Tolerance Features
 
 Transition to Physical System
 In the real implementation:
+
 •	Replace millis() with RTC module 
+
 •	Use external pull-up resistors for I2C 
+
 •	Increase timing intervals (minutes/hours) 
+
 •	Use larger button for accessibility 
 
 How to Run the Project
@@ -134,9 +161,13 @@ Physical Setup
 4.	Test functionality 
 
 Repository Contents
+
 •	patient.ino – Patient Unit code 
-•	caregiver.ino – Caregiver Unit code 
+
+•	caregiver.ino – Caregiver Unit code
+
 •	diagram.json – Wokwi schematic 
+
 •	README.md – Project documentation 
 
 
