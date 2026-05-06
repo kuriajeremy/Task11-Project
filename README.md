@@ -6,11 +6,21 @@ An Arduino-based embedded system that monitors room temperature and humidity and
 
 
 
-# Simulation (Proof of Concept)
+# Simulation (Wokwi)
 
 The Wokwi simulation was built as a **proof of concept and schematic guide** before physical assembly. It confirmed all pin assignments, I2C wiring, comfort zone logic, and servo behaviour were correct before any hardware was connected.
 
 **To run the simulation** Go to [wokwi.com](https://wokwi.com), create a new Arduino Uno project, paste in `diagram.json` and `sketch.ino`, then click **Start Simulation**. Click the DHT22 component and drag its temperature/humidity sliders to test the system's response.
+
+# Simulation Screenshots
+
+![image alt](https://github.com/kuriajeremy/Task11-Project/blob/38d04d649c4864916802d6d37ae1a9b7042222b1/cool.png)
+
+![image alt](https://github.com/kuriajeremy/Task11-Project/blob/38d04d649c4864916802d6d37ae1a9b7042222b1/hot.png)
+
+![image alt](https://github.com/kuriajeremy/Task11-Project/blob/38d04d649c4864916802d6d37ae1a9b7042222b1/med_high.png)
+
+
 
 
 
@@ -34,7 +44,7 @@ The Wokwi simulation was built as a **proof of concept and schematic guide** bef
 # Wiring
 The wiring is done using the same configuration as the schematic design (wokwi simulation) shown below
 
-![image alt]()
+![image alt](https://github.com/kuriajeremy/Task11-Project/blob/38d04d649c4864916802d6d37ae1a9b7042222b1/schematic.png)
 
 | Component | Pin | Arduino Pin |
 |---|---|---|
