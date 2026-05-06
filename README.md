@@ -94,7 +94,7 @@ Install these via **Arduino IDE → Tools → Manage Libraries**:
 # How to Run on the Physical Prototype
 
 1. Wire up all components as shown in the table above.
-2. Open `prototype/RoomComfortMonitor.ino` in the Arduino IDE.
+2. Open room_monitor.ino in the Arduino IDE.
 3. Install the required libraries listed above.
 4. Select **Tools → Board → Arduino Uno** and the correct COM port.
 5. Click **Upload**.
